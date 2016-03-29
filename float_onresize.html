@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Float - 手動による切り替え時間計測</title>
+  <title>Float - JavaScriptによる切り替え時間計測</title>
   <style>
     * {
       margin: 0;
@@ -28,12 +28,28 @@
       border: 1px solid #5f9bf5;
     }
 
-    @media (max-width: 1000px) {
-      ul li {
-        float: none;
-      }
+    /* 横並び解除時 */
+    .no-side ul li {
+      float: none;
     }
   </style>
+  <script>
+    var _this = this;
+    window.addEventListener("load", function () {
+      return _this.startToggleClass();
+    });
+    var body;
+    function startToggleClass() {
+      body = document.getElementsByTagName("body")[0];
+      tick();
+    }
+    function tick() {
+      setTimeout(function () {
+        body.classList.toggle("no-side");
+        tick();
+      }, 1000);
+    }
+  </script>
 </head>
 <body>
 <ul>
