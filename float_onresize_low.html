@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Float - JavaScriptによる切り替え時間計測</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      width: 1000px;
+    }
+
+    ul:after {
+      content: "";
+      clear: both;
+      display: block;
+    }
+
+    li {
+      float: left;
+      list-style: none;
+      width: 200px;
+      height: 200px;
+      box-sizing: border-box;
+      border: 1px solid #5f9bf5;
+    }
+
+    /* bodyにno-sideクラスが付与された場合は横並びを解除 */
+    body.no-side li {
+      float: none;
+    }
+  </style>
+  <script>
+    // 3秒ごとにbodyタグにsideクラスを付与する
+    var _this = this;
+    window.addEventListener("load", function () {
+      return _this.startToggleClass();
+    });
+    var body;
+    function startToggleClass() {
+      body = document.getElementsByTagName("body")[0];
+      tick();
+    }
+    function tick() {
+      setTimeout(function () {
+        body.classList.toggle("no-side");
+        tick();
+      }, 3000);
+    }
+  </script>
+</head>
+<body>
+<ul>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+</body>
+</html>
