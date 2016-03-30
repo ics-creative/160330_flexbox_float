@@ -28,7 +28,7 @@
     }
   </style>
   <script>
-    // 5秒ごとにbodyタグにno-sideクラスを付与する
+    // 3秒ごとにbodyタグにno-sideクラスを付与する
     var _this = this;
     window.addEventListener("load", function () {
       return _this.startToggleClass();
@@ -42,7 +42,7 @@
       setTimeout(function () {
         body.classList.toggle("no-side");
         tick();
-      }, 5000);
+      }, 3000);
     }
   </script>
 </head>

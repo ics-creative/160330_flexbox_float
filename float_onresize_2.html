@@ -33,7 +33,7 @@
     }
   </style>
   <script>
-    // 5秒ごとにbodyタグにsideクラスを付与する
+    // 3秒ごとにbodyタグにsideクラスを付与する
     var _this = this;
     window.addEventListener("load", function () {
       return _this.startToggleClass();
@@ -47,7 +47,7 @@
       setTimeout(function () {
         body.classList.toggle("side");
         tick();
-      }, 5000);
+      }, 3000);
     }
   </script>
 </head>
