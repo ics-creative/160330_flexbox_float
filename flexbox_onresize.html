@@ -11,7 +11,6 @@
 
     ul {
       width: 1000px;
-      display: flex;
     }
 
     li {
@@ -22,12 +21,13 @@
       border: 1px solid #5f9bf5;
     }
 
-    /* bodyにno-sideクラスが付与された場合は横並びを解除 */
-    body.no-side ul {
-      display: block;
+    /* bodyにsideクラスが付与された場合は横並びにする */
+    body.side ul {
+      display: flex;
     }
   </style>
   <script>
+    // 5秒ごとにbodyタグにsideクラスを付与する
     var _this = this;
     window.addEventListener("load", function () {
       return _this.startToggleClass();
@@ -39,9 +39,9 @@
     }
     function tick() {
       setTimeout(function () {
-        body.classList.toggle("no-side");
+        body.classList.toggle("side");
         tick();
-      }, 1000);
+      }, 5000);
     }
   </script>
 </head>
